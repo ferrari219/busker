@@ -17,6 +17,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "jsxImportSource": "@emotion/react",
     "baseUrl": ".", //절대경로 셋팅
     "paths": { //간편입력
       "@components/*": [
