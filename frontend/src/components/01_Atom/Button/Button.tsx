@@ -38,13 +38,13 @@ const buttonStyle = css`
   }
   &.size {
     &-sm {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1rem 0.3rem 1rem;
     }
     &-md {
-      padding: 0.7rem 1.5rem;
+      padding: 0.7rem 1.5rem 0.5rem 1.5rem;
     }
     &-lg {
-      padding: 1rem 2rem;
+      padding: 1rem 2rem 0.8rem 2rem;
     }
   }
   &.round {
@@ -69,7 +69,7 @@ interface IbuttonProps {
   type: "solid" | "ghost" | "light" | "outline" | "text" | "danger";
   size: "sm" | "md" | "lg";
   round: "0" | "5" | "10";
-  flex: "flex" | "";
+  flex: boolean;
   children?: React.ReactNode;
 }
 
@@ -77,14 +77,19 @@ const Button = ({
   type = "solid",
   size = "md",
   round = "5",
-  flex = "",
+  flex = false,
   children = "버튼",
 }: IbuttonProps) => {
   return (
     <button
       type="button"
       css={buttonStyle}
-      className={`type-${type} size-${size} round-${round} ${flex}`}
+      className={[
+        `type-${type}`,
+        `size-${size}`,
+        `round-${round}`,
+        flex && "flex",
+      ].join(" ")}
     >
       {children}
     </button>

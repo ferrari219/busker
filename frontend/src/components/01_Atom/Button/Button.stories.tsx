@@ -9,4 +9,10 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Overview = Template.bind({});
-Overview.args = {};
+Overview.args = {
+  type: "solid",
+  size: "md",
+  round: "5",
+  flex: false,
+  children: "버튼",
+};
