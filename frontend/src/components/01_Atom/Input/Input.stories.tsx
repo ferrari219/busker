@@ -8,4 +8,8 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 export const Overview = Template.bind({});
-Overview.args = {};
+Overview.args = {
+  value: "",
+  placeholder: "플레이스 홀더",
+  disable: false,
+};

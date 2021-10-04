@@ -7,7 +7,13 @@ export const size = {
 }
   
 const theme = {
-    mainColor: '#0276F9',
+    color: {
+        main: '#0276F9',
+        default: '#d9d9d9',
+        active: '#486FF2',
+        error: '#d95959',
+        success: '#1AB987',
+    },
     mq: {
         laptop: `@media only screen and (min-width: ${size.largest})`,
         tablet: `@media only screen and (min-width: ${size.large})`,
