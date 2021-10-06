@@ -3,11 +3,13 @@ import { css } from "@emotion/react";
 import theme from "src/styles/theme";
 
 const inputStyle = css`
+  padding: 0.3rem 0.2rem 0.2rem 0.2rem;
   background-color: white;
   border: 1px solid ${theme.color.default};
   border-radius: 0.4rem;
-  &::focus,
+  &:focus,
   &.active {
+    outline: none;
     border: 1px solid ${theme.color.active};
   }
 `;

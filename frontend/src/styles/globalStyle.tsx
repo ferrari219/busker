@@ -17,7 +17,7 @@ const global = (
       body {
         max-width: 89rem;
         margin: 0 auto;
-        background-color: #141414;
+        /* background-color: #141414; */
         a {
           text-decoration: none;
           color: inherit;

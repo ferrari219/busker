@@ -8,21 +8,21 @@ const buttonStyle = css`
   &.type {
     &-solid {
       /** 중요도 1순위 */
-      background-color: ${theme.mainColor};
+      background-color: ${theme.color.main};
       border: none;
       color: white;
     }
     &-ghost {
       /** 중요도 2순위 */
       background-color: white;
-      border: 1px solid ${theme.mainColor};
-      color: ${theme.mainColor};
+      border: 1px solid ${theme.color.main};
+      color: ${theme.color.main};
     }
     &-light {
       /** 중요도 3순위 */
       background-color: #f0f0f0;
       border: none;
-      color: ${theme.mainColor};
+      color: ${theme.color.main};
     }
     &-outline {
       /** 중요도 3순위 */
@@ -38,7 +38,7 @@ const buttonStyle = css`
   }
   &.size {
     &-sm {
-      padding: 0.5rem 1rem 0.3rem 1rem;
+      padding: 0.3rem 1rem 0.2rem 1rem;
     }
     &-md {
       padding: 0.7rem 1.5rem 0.5rem 1.5rem;
@@ -66,10 +66,10 @@ const buttonStyle = css`
 `;
 
 interface IbuttonProps {
-  type: "solid" | "ghost" | "light" | "outline" | "text" | "danger";
-  size: "sm" | "md" | "lg";
-  round: "0" | "5" | "10";
-  flex: boolean;
+  type?: "solid" | "ghost" | "light" | "outline" | "text" | "danger";
+  size?: "sm" | "md" | "lg";
+  round?: "0" | "5" | "10";
+  flex?: boolean;
   children?: React.ReactNode;
 }
 
