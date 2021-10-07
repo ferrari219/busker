@@ -1,20 +1,43 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Icon, { iconTypes } from "./Icon";
+// /** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
+const ulStyle = css`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  li {
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 1rem;
+    }
+  }
+`;
 
 export default {
   title: "01_Atom/Icon",
   component: Icon,
+  argTypes: {
+    bgColor: {
+      control: "color",
+    },
+  },
 } as ComponentMeta<typeof Icon>;
 
-export const icon = () => <Icon icon="Colors" />;
+// export const icon = () => <Icon icon="Back" />;
 
-const Template: ComponentStory<typeof Icon> = (args) => <Icon icon="Colors" />;
+const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
 
-// export const Overview = Template.bind({});
+export const Overview = Template.bind({});
+Overview.args = {
+  icon: "Back",
+};
 
 export const listOfIcons = () => {
   return (
-    <ul>
+    <ul css={ulStyle}>
       {/* ul css={iconListStyle} */}
       {iconTypes.map((icon) => (
         <li key={icon}>

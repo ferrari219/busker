@@ -1,6 +1,13 @@
 // import { ReactComponent as Colors } from '../assets/colors.svg';
-import React from "react";
+// import React from "react";
 import * as icons from "./svg";
+// /** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
+const iconStyle = css`
+  width: 5rem;
+  height: auto;
+`;
 
 type IconType = keyof typeof icons;
 export const iconTypes: IconType[] = Object.keys(icons) as any[]; // 스토리에서 불러오기 위함
@@ -10,19 +17,23 @@ export type IconProps = {
   /** 사용 할 아이콘 타입 */
   icon: IconType;
   /** 아이콘 색상 */
-  color?: string;
+  fill?: string;
   /** 아이콘 크기 */
   size?: string | number;
+  /** 아이콘 클래스화 */
   className?: string;
+  /** 아이콘 클래스화 */
+  round?: "0" | "5" | "10";
 };
 
-const Icon = ({ icon, color, size, className }: IconProps) => {
+const Icon = ({ icon, fill, size, round, className }: IconProps) => {
   const SVGIcon = icons[icon];
   console.log(SVGIcon);
   return (
     <SVGIcon
-      // css={{ fill: color || 'currentColor', width: size, height: 'auto' }}
-      className={className}
+      css={iconStyle}
+      className={[className, `round-${round}`].join(" ")}
+      // style={{ width: "20rem" }}
     />
   );
 };
