@@ -14,6 +14,11 @@ const theme = {
         error: '#d95959',
         success: '#1AB987',
     },
+    shadow: {
+        // https://getcssscan.com/css-box-shadow-examples
+        0: 'rgba(149, 157, 165, 0.2) 0px 8px 24px;',
+        7: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;',
+    },
     mq: {
         laptop: `@media only screen and (min-width: ${size.largest})`,
         tablet: `@media only screen and (min-width: ${size.large})`,

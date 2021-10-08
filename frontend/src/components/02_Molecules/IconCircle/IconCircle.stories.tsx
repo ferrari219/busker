@@ -11,4 +11,8 @@ const Template: ComponentStory<typeof IconCircle> = (args) => (
 );
 
 export const Overview = Template.bind({});
-Overview.args = {};
+Overview.args = {
+  size: "4rem",
+  bgColor: "pointer",
+  shadow: true,
+};

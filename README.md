@@ -3,6 +3,10 @@
 ## Dev Install Module
 
 -   [ ] create-next-app
+-   [ ] typescript
+-   [ ] storybook
+-   [ ] emotion
+-   [ ] svgr/webpack
 
 ## Design Tool
 
@@ -14,4 +18,6 @@
 
 # Backend
 
-## Install Module
+## Dev Install Module
+
+-   [ ] 예정
