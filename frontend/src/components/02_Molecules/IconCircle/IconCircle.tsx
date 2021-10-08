@@ -9,6 +9,7 @@ const iconStyle = css`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  border: none;
   &.bg {
     &-basic {
       background-color: white;
@@ -36,20 +37,23 @@ interface IiconcircleProps {
   size?: string | number;
   bgColor?: "basic" | "pointer";
   shadow?: boolean;
+  onClick?: () => void;
 }
 
 const IconCircle = ({
   bgColor = "basic", //transparent
   size = "4rem",
   shadow = false,
+  onClick,
 }: IiconcircleProps) => {
   return (
-    <div
+    <button
       css={[iconStyle, { width: size, height: size }]}
       className={[`bg-${bgColor}`, shadow && "shadow"].join(" ")}
+      onClick={onClick}
     >
       <Icon icon="Back" />
-    </div>
+    </button>
   );
 };
 

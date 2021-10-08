@@ -1,13 +1,33 @@
 import React from "react";
 // import Button from "@components/01_Atom/Button/Button";
-import Button from "src/components/01_Atom/Button";
+
 import Input from "src/components/01_Atom/Input";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import Icon from "src/components/01_Atom/Icon";
+import theme from "src/styles/theme";
 
 const searchStyle = css`
-  input + button {
-    margin-left: 0.3rem;
+  position: relative;
+  max-width: 89rem;
+  border: 1px solid ${theme.color.default};
+  border-radius: 0.5rem;
+  input {
+    width: 100%;
+    border: none;
+  }
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    svg {
+      width: 80%;
+      height: auto;
+    }
   }
 `;
 
@@ -17,7 +37,9 @@ const Search = ({}: IsearchProps) => {
   return (
     <div css={searchStyle}>
       <Input placeholder="검색" />
-      <Button size="sm">검색</Button>
+      <button type="button">
+        <Icon icon="Back" />
+      </button>
     </div>
   );
 };

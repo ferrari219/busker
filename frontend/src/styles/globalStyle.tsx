@@ -15,7 +15,7 @@ const global = (
         }
       }
       body {
-        max-width: 89rem;
+        /* max-width: 89rem; */
         margin: 0 auto;
         /* background-color: #141414; */
         a {
