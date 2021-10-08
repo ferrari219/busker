@@ -24,6 +24,18 @@ const iconStyle = css`
         fill: white;
       }
     }
+    &-add {
+      background-color: #333;
+      svg {
+        fill: white;
+      }
+    }
+    &-notice {
+      background-color: ${theme.color.main};
+      svg {
+        fill: white;
+      }
+    }
   }
   &.round {
     &-0 {
@@ -47,7 +59,7 @@ interface IiconbuttonProps {
   icon?: string;
   size?: string | number;
   round?: "0" | "5" | "10";
-  bgColor?: "basic" | "pointer";
+  bgColor?: "basic" | "pointer" | "add" | "notice";
   shadow?: boolean;
   onClick?: () => void;
 }

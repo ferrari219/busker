@@ -6,7 +6,7 @@ export default {
   component: IconButton,
   argTypes: {
     bgColor: {
-      options: ["basic", "pointer"],
+      options: ["basic", "pointer", "add", "notice"],
       control: { type: "radio" },
     },
     round: {

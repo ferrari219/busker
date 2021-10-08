@@ -10,6 +10,8 @@ import theme from "src/styles/theme";
 const searchStyle = css`
   position: relative;
   max-width: 89rem;
+  height: 4rem;
+  background-color: white;
   border: 1px solid ${theme.color.default};
   border-radius: 0.5rem;
   input {
@@ -21,8 +23,8 @@ const searchStyle = css`
     right: 0;
     top: 0;
     background-color: transparent;
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     border: none;
     svg {
       width: 80%;
