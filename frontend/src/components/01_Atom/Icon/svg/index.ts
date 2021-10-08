@@ -1,3 +1,5 @@
-export { ReactComponent as Back} from './back.svg'
-// export { ReactComponent as Colors} from './colors.svg'
-// export { ReactComponent as Flow} from './flow.svg'
+export { ReactComponent as IcoBack} from './back.svg'
+export { ReactComponent as IcoMenu} from './menu.svg'
+export { ReactComponent as IcoSearch} from './search.svg'
+export { ReactComponent as IcoBell} from './bell.svg'
+export { ReactComponent as IcoAdd} from './add.svg'

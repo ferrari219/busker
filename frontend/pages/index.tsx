@@ -1,23 +1,40 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import MapSample from "src/assets/img/map_sample.jpg";
+import MapSample from "@assets/img/map_sample.jpg";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import Nav from "@components/03_Organism/Nav";
+import FootFloat from "@components/03_Organism/FootFloat";
 
 const mainStyle = css`
   overflow: hidden;
   position: relative;
   height: 100vh;
+  nav {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    z-index: 2;
+  }
 `;
 const mapStyle = css`
   position: absolute;
+  z-index: 0;
   left: 0;
   top: 0;
   img {
     height: 100vh;
     object-fit: cover;
   }
+`;
+const footfloatStyle = css`
+  position: absolute;
+  left: 0;
+  bottom: 2rem;
+  z-index: 2;
+  width: 100%;
+  padding: 0 2rem;
 `;
 
 const Home: NextPage = () => {
@@ -29,9 +46,15 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <section css={mainStyle}>
+          <nav>
+            <Nav />
+          </nav>
           <div css={mapStyle}>
             <Image src={MapSample} alt="지도 샘플" />
           </div>
+          <section css={footfloatStyle}>
+            <FootFloat />
+          </section>
         </section>
       </main>
     </div>

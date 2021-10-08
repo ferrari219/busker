@@ -38,7 +38,7 @@ const Search = ({}: IsearchProps) => {
     <div css={searchStyle}>
       <Input placeholder="검색" />
       <button type="button">
-        <Icon icon="Back" />
+        <Icon icon="IcoSearch" />
       </button>
     </div>
   );

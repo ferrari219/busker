@@ -26,13 +26,13 @@ export default {
   },
 } as ComponentMeta<typeof Icon>;
 
-// export const icon = () => <Icon icon="Back" />;
+// export const icon = () => <Icon icon="IcoBack" />;
 
 const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
 
 export const Overview = Template.bind({});
 Overview.args = {
-  icon: "Back",
+  icon: "IcoBack",
 };
 
 export const listOfIcons = () => {

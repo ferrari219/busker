@@ -3,12 +3,12 @@ import Icon from "src/components/01_Atom/Icon";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import theme from "src/styles/theme";
+import { IconProps } from "@components/01_Atom/Icon/Icon";
 
 const iconStyle = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
   border: none;
   &.bg {
     &-basic {
@@ -25,6 +25,16 @@ const iconStyle = css`
       }
     }
   }
+  &.round {
+    &-0 {
+    }
+    &-5 {
+      border-radius: 0.5rem;
+    }
+    &-10 {
+      border-radius: 50%;
+    }
+  }
   &.shadow {
     box-shadow: ${theme.shadow[7]};
   }
@@ -33,28 +43,34 @@ const iconStyle = css`
   }
 `;
 
-interface IiconcircleProps {
+interface IiconbuttonProps {
+  icon?: string;
   size?: string | number;
+  round?: "0" | "5" | "10";
   bgColor?: "basic" | "pointer";
   shadow?: boolean;
   onClick?: () => void;
 }
 
-const IconCircle = ({
+const IconButton = ({
+  icon = "IcoBack",
   bgColor = "basic", //transparent
   size = "4rem",
+  round = "10",
   shadow = false,
   onClick,
-}: IiconcircleProps) => {
+}: IiconbuttonProps & IconProps) => {
   return (
     <button
       css={[iconStyle, { width: size, height: size }]}
-      className={[`bg-${bgColor}`, shadow && "shadow"].join(" ")}
+      className={[`bg-${bgColor}`, `round-${round}`, shadow && "shadow"].join(
+        " ",
+      )}
       onClick={onClick}
     >
-      <Icon icon="Back" />
+      <Icon icon={icon} />
     </button>
   );
 };
 
-export default IconCircle;
+export default IconButton;
