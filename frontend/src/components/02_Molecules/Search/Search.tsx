@@ -16,6 +16,7 @@ const searchStyle = css`
   border-radius: 0.5rem;
   input {
     width: 100%;
+    height: 4rem;
     border: none;
   }
   button {
@@ -23,7 +24,7 @@ const searchStyle = css`
     right: 0;
     top: 0;
     background-color: transparent;
-    width: 4rem;
+    width: 3.8rem;
     height: 4rem;
     border: none;
     svg {
