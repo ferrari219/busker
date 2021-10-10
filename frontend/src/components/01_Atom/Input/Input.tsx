@@ -23,7 +23,7 @@ interface IinputProps {
 // https://brunch.co.kr/@chulhochoiucj0/20
 
 const Input = ({
-  value = "",
+  value = "test",
   placeholder = "플레이스 홀더",
   disable,
 }: IinputProps) => {
@@ -31,7 +31,7 @@ const Input = ({
     <input
       css={inputStyle}
       type="text"
-      value={value}
+      defaultValue={value}
       placeholder={placeholder}
       disabled={disable}
     />

@@ -11,12 +11,6 @@ const mainStyle = css`
   overflow: hidden;
   position: relative;
   height: 100vh;
-  nav {
-    position: absolute;
-    left: 2rem;
-    top: 2rem;
-    z-index: 2;
-  }
 `;
 const mapStyle = css`
   position: absolute;
@@ -46,9 +40,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <section css={mainStyle}>
-          <nav>
-            <Nav />
-          </nav>
+          <Nav />
           <div css={mapStyle}>
             <Image src={MapSample} alt="지도 샘플" />
           </div>

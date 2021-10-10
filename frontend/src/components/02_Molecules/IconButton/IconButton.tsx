@@ -61,7 +61,7 @@ interface IiconbuttonProps {
   round?: "0" | "5" | "10";
   bgColor?: "basic" | "pointer" | "add" | "notice";
   shadow?: boolean;
-  onClick?: () => void;
+  onClick?: (e: React.SyntheticEvent) => void;
 }
 
 const IconButton = ({

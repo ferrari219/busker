@@ -1,41 +1,44 @@
+import Menu from "src/components/03_Organism/Menu";
 import React from "react";
-import IconButton from "../../02_Molecules/IconButton/IconButton";
+import IconButton from "src/components/02_Molecules/IconButton/IconButton";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import theme from "src/styles/theme";
 
-// const navStyle = css`
-//   position: relative;
-// `;
-const menuStyle = css`
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 2;
-  width: 25rem;
-  height: 100vh;
-  background-color: white;
-  box-shadow: ${theme.shadow[7]};
+const wrapStyle = css`
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  z-index: 3;
 `;
-const dimmedStyle = css`
+const navStyle = css`
   position: fixed;
-  left: 0;
+  left: -100%;
   top: 0;
-  z-index: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  transition: left 0.2s ease-in-out;
+  &.is-active {
+    left: 0;
+  }
 `;
+
+const handleMenuBtn = (e: React.SyntheticEvent<EventTarget>) => {
+  e.preventDefault();
+  // console.log("handleMenuBtn");
+  const navs = document.querySelector("nav") as HTMLParagraphElement;
+  // console.log(target);
+  navs.classList.add("is-active");
+};
 
 interface InavProps {}
 
 const Nav = ({}: InavProps) => {
   return (
-    <>
-      <IconButton icon="IcoMenu" onClick={() => {}} shadow size="4rem" />
-      <div css={menuStyle}>menu</div>
-      <div css={dimmedStyle} />
-    </>
+    <div css={wrapStyle}>
+      <IconButton icon="IcoMenu" onClick={handleMenuBtn} shadow size="4rem" />
+      <nav css={navStyle}>
+        <Menu />
+      </nav>
+    </div>
   );
 };
 

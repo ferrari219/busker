@@ -11,16 +11,12 @@ const ulStyle = css`
   }
 `;
 
-interface ImenuulProps {}
+interface ImenuulProps {
+  children: React.ReactNode;
+}
 
-const MenuUl = ({}: ImenuulProps & IconProps) => {
-  return (
-    <ul css={ulStyle}>
-      <MenuLi icon="IcoSearch" label="검색" />
-      <MenuLi icon="IcoSearch" label="검색" />
-      <MenuLi icon="IcoSearch" label="검색" />
-    </ul>
-  );
+const MenuUl = ({ children }: ImenuulProps) => {
+  return <ul css={ulStyle}>{children}</ul>;
 };
 
 export default MenuUl;

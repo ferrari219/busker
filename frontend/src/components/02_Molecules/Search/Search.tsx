@@ -38,12 +38,14 @@ interface IsearchProps {}
 
 const Search = ({}: IsearchProps) => {
   return (
-    <div css={searchStyle}>
-      <Input placeholder="검색" />
-      <button type="button">
-        <Icon icon="IcoSearch" />
-      </button>
-    </div>
+    <form>
+      <div css={searchStyle}>
+        <Input placeholder="검색" />
+        <button type="button">
+          <Icon icon="IcoSearch" />
+        </button>
+      </div>
+    </form>
   );
 };
 

@@ -28,7 +28,7 @@ export type IconProps = {
 
 const Icon = ({ icon, fill, size, round, className }: IconProps) => {
   const SVGIcon = icons[icon];
-  console.log(SVGIcon);
+  // console.log(SVGIcon);
   return (
     <SVGIcon
       css={iconStyle}
