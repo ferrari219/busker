@@ -4,7 +4,7 @@ import Image from "next/image";
 import MapSample from "@assets/img/map_sample.jpg";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import Nav from "@components/03_Organism/Nav";
+import Nav from "@components/04_Templates/Nav";
 import FootFloat from "@components/03_Organism/FootFloat";
 
 const mainStyle = css`
@@ -34,7 +34,7 @@ const footfloatStyle = css`
   bottom: 2rem;
   z-index: 2;
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 1rem;
 `;
 
 const Home: NextPage = () => {
