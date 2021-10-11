@@ -1,2 +1,2 @@
-import AddContainer from './addContainer';
+import AddContainer from './AddContainer';
 export default AddContainer;

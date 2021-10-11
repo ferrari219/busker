@@ -7,7 +7,11 @@ import { css } from "@emotion/react";
 import Nav from "@components/04_Templates/Nav";
 import FootFloat from "@components/03_Organism/FootFloat";
 import IconButton from "@components/02_Molecules/IconButton";
+import { SrOnly } from "@styles/globalStyle";
 
+const h1Style = css`
+  ${SrOnly}
+`;
 const mainStyle = css`
   overflow: hidden;
   position: relative;
@@ -45,13 +49,13 @@ const footfloatStyle = css`
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <section>
       {/* https://projects.invisionapp.com/share/JZRMNHUH2BC */}
       <Head>
         <title>리바트몰</title>
       </Head>
       <main>
-        <h1>메인 페이지</h1>
+        <h1 css={h1Style}>메인 페이지</h1>
         <section css={mainStyle}>
           <Nav />
           <div css={mapStyle}>
@@ -63,7 +67,7 @@ const Home: NextPage = () => {
           </section>
         </section>
       </main>
-    </div>
+    </section>
   );
 };
 
