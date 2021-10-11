@@ -6,6 +6,7 @@ import MapSample from "@assets/img/map_sample.jpg";
 import { css } from "@emotion/react";
 import Nav from "@components/04_Templates/Nav";
 import FootFloat from "@components/03_Organism/FootFloat";
+import IconButton from "@components/02_Molecules/IconButton";
 
 const mainStyle = css`
   overflow: hidden;
@@ -20,6 +21,17 @@ const mapStyle = css`
   img {
     height: 100vh;
     object-fit: cover;
+  }
+  // 포인터
+  button {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+  svg {
+    transform: rotate(-45deg);
   }
 `;
 const footfloatStyle = css`
@@ -42,6 +54,7 @@ const Home: NextPage = () => {
         <section css={mainStyle}>
           <Nav />
           <div css={mapStyle}>
+            <IconButton icon="IcoPointer" bgColor="pointer" shadow={true} />
             <Image src={MapSample} alt="지도 샘플" />
           </div>
           <section css={footfloatStyle}>
