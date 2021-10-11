@@ -33,13 +33,26 @@ const userStyle = css`
   flex-flow: row wrap;
   align-items: center;
   height: 6rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-bottom: 1px solid #ccc;
+  svg {
+    width: 80% !important;
+  }
+  span {
+    margin-left: 1rem;
+  }
+`;
+const closeStyle = css`
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 `;
 
-interface ImenuProps {}
+interface ImenuProps {
+  onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+}
 
-const Menu = ({}: ImenuProps) => {
+const Menu = ({ onClick }: ImenuProps) => {
   return (
     <section>
       <div css={menuStyle}>
@@ -52,6 +65,9 @@ const Menu = ({}: ImenuProps) => {
           <MenuLi icon="IcoSearch" label="검색" />
           <MenuLi icon="IcoSearch" label="검색" />
         </MenuUl>
+        <div css={closeStyle}>
+          <IconButton icon="IcoClose" bgColor="transp" onClick={onClick} />
+        </div>
       </div>
       <div css={dimmedStyle} />
     </section>

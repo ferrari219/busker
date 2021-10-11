@@ -28,6 +28,13 @@ const handleMenuBtn = (e: React.SyntheticEvent<EventTarget>) => {
   // console.log(target);
   navs.classList.add("is-active");
 };
+const handleCloseBtn = (e: React.SyntheticEvent<EventTarget>) => {
+  e.preventDefault();
+  // console.log("close");
+  const navs = document.querySelector("nav") as HTMLParagraphElement;
+  // console.log(target);
+  navs.classList.remove("is-active");
+};
 
 interface InavProps {}
 
@@ -36,7 +43,7 @@ const Nav = ({}: InavProps) => {
     <div css={wrapStyle}>
       <IconButton icon="IcoMenu" onClick={handleMenuBtn} shadow size="4rem" />
       <nav css={navStyle}>
-        <Menu />
+        <Menu onClick={handleCloseBtn} />
       </nav>
     </div>
   );

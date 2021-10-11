@@ -36,6 +36,12 @@ const iconStyle = css`
         fill: white;
       }
     }
+    &-transp {
+      background-color: transparent;
+      svg {
+        fill: #666;
+      }
+    }
   }
   &.round {
     &-0 {
@@ -59,7 +65,7 @@ interface IiconbuttonProps {
   icon?: string;
   size?: string | number;
   round?: "0" | "5" | "10";
-  bgColor?: "basic" | "pointer" | "add" | "notice";
+  bgColor?: "basic" | "pointer" | "add" | "notice" | "transp";
   shadow?: boolean;
   onClick?: (e: React.SyntheticEvent) => void;
 }

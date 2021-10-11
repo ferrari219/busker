@@ -13,7 +13,7 @@ const liStyle = css`
   svg {
     width: 2rem;
     height: auto;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
   }
   span {
     color: #444;

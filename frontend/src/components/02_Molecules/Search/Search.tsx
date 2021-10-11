@@ -16,7 +16,7 @@ const searchStyle = css`
   border-radius: 0.5rem;
   input {
     width: 100%;
-    height: 4rem;
+    height: 3.5rem;
     border: none;
   }
   button {

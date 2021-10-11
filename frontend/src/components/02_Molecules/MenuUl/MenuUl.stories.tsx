@@ -9,4 +9,6 @@ export default {
 const Template: ComponentStory<typeof MenuUl> = (args) => <MenuUl {...args} />;
 
 export const Overview = Template.bind({});
-Overview.args = {};
+Overview.args = {
+  children: "children",
+};

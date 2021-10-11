@@ -6,6 +6,8 @@ import { css } from "@emotion/react";
 
 const ulStyle = css`
   list-style: none;
+  margin: 0;
+  padding: 2rem;
   li {
     padding: 0.5rem 0;
   }
