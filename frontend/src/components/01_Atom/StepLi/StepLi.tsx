@@ -5,7 +5,7 @@ import { SrOnly } from "src/styles/globalStyle";
 import theme from "src/styles/theme";
 
 const stepLiStyle = css`
-  border-bottom: 0.5rem solid #f1f1f1;
+  // border-bottom: 0.5rem solid #f1f1f1;
   button {
     padding: 2rem 1rem;
     background-color: transparent;
