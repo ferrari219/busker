@@ -51,6 +51,7 @@ const Home: NextPage = () => {
         <title>리바트몰</title>
       </Head>
       <main>
+        <h1>메인 페이지</h1>
         <section css={mainStyle}>
           <Nav />
           <div css={mapStyle}>
