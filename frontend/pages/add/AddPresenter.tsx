@@ -3,7 +3,7 @@ import Heads from "@components/99_Etc/Heads";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { SrOnly } from "@styles/globalStyle";
-import Step from "@components/03_Organism/Step";
+import Step from "@components/04_Templates/Step";
 
 const mainStyle = css`
   h1 {

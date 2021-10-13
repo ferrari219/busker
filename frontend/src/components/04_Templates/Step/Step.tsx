@@ -3,8 +3,15 @@ import StepLi from "src/components/01_Atom/StepLi/StepLi";
 import React, { useState } from "react";
 
 const content = [
-  { id: 1, tab: "Section 1", content: "I am the content of the Section 1" },
-  { id: 2, tab: "Section 2", content: "I am the content of the Section 2" },
+  { id: 1, tab: "스토어등록", content: "I am the content of the Section 1" },
+  { id: 2, tab: "위치 등록", content: "I am the content of the Section 2" },
+  { id: 3, tab: "메뉴 등록", content: "I am the content of the Section 3" },
+  { id: 4, tab: "상세정보", content: "I am the content of the Section 4" },
+  {
+    id: 5,
+    tab: "스토어 생성 완료",
+    content: "I am the content of the Section 5",
+  },
 ];
 
 const useTabs = (
@@ -30,10 +37,12 @@ const Step = ({}) => {
         {content.map((item, index) => (
           <StepLi
             key={item.id}
-            // className={currentItem.id === index ? 'is-active' : ''}
             step={item.id}
             label={item.tab}
-            onClick={() => changeItem(index)}
+            active={currentItem.id - 1 === index ? true : false}
+            onClick={() => {
+              changeItem(index);
+            }}
           />
         ))}
         {/* <StepLi step={1} label="스토어 등록" />
