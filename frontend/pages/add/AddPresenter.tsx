@@ -4,6 +4,9 @@ import Heads from "@components/99_Etc/Heads";
 import { css } from "@emotion/react";
 import { SrOnly } from "@styles/globalStyle";
 import Step from "@components/04_Templates/Step";
+import StepCont from "@components/02_Molecules/StepCont";
+import Image from "next/image";
+import ImgHam from "src/assets/img/sample_burger.jpg";
 
 const mainStyle = css`
   h1 {

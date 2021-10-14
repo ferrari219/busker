@@ -4,6 +4,14 @@ import GlobalStyle from "../src/styles/globalStyle";
 import theme from "../src/styles/theme";
 import { ThemeProvider } from "@emotion/react";
 
+//스토리북에 이미지 사용하기
+import * as NextImage from "next/image";
+const OriginalNextImage = NextImage.default;
+Object.defineProperty(NextImage, "default", {
+  configurable: true,
+  value: (props) => <OriginalNextImage {...props} unoptimized />,
+});
+
 // 모든 스토리에 스타일을 적용하기 위한 글로벌 decorator
 export const decorators = [
   (Story) => (
