@@ -4,22 +4,64 @@ import StepCont from "src/components/02_Molecules/StepCont";
 import React, { useState } from "react";
 import Image from "next/image";
 import ImgHam from "src/assets/img/sample_burger.jpg";
+import Input from "src/components/01_Atom/Input";
+import Button from "src/components/01_Atom/Button";
+import ButtonWrap from "src/components/02_Molecules/ButtonWrap";
 
 const content = [
   {
     id: 1,
     tab: "스토어등록",
-    content: `cont1`,
-    // {
-    //   h3: "생성할 스토어 대표사진과 이름을 입력해주세요.",
-    //   img: ImgHam,
-    //   imgAlt: "뉴욕 정통 수제버거",
-    // },
+    content: (
+      <>
+        <h3>생성할 스토어 대표사진과 이름을 입력해주세요</h3>
+        <div>
+          <Image src={ImgHam} width="890" height="670" alt="대표사진" />
+          <p>
+            <Input
+              value="뉴욕 수제버거"
+              placeholder="스토어 이름"
+              width="100%"
+            />
+          </p>
+          <ButtonWrap>
+            <Button type="outline" size="lg">
+              이전
+            </Button>
+            <Button type="solid" size="lg">
+              다음
+            </Button>
+          </ButtonWrap>
+        </div>
+      </>
+    ),
   },
   {
     id: 2,
     tab: "위치 등록",
-    content: `cont2`,
+    content: (
+      <>
+        <h3>스토어 위치를 맵에서 선택해주세요.</h3>
+        <div>
+          <Image src={ImgHam} width="890" height="670" alt="대표사진" />
+          <p>
+            <Input
+              value="뉴욕시 도봉구 강남대로566"
+              placeholder="스토어 위치"
+              width="100%"
+            />
+          </p>
+          <ButtonWrap>
+            <Button type="outline" size="lg">
+              이전
+            </Button>
+            <Button type="solid" size="lg">
+              다음
+            </Button>
+          </ButtonWrap>
+        </div>
+      </>
+    ),
     // {
     //   h3: "스토어 위치를 맵에서 선택해주세요.",
     //   img: ImgHam,
@@ -88,21 +130,7 @@ const Step = ({}) => {
         <StepLi step={4} label="상세정보" />
         <StepLi step={5} label="스토어 생성 완료" /> */}
       </StepUl>
-      <StepCont>
-        {currentItem.content}
-        {/* {currentItem.content.h3 && <h3>{currentItem.content.h3}</h3>}
-        {currentItem.content.img && (
-          <div>
-            <Image
-              src={currentItem.content.img}
-              width="890"
-              height="670"
-              alt={currentItem.content.imgAlt}
-            />
-            <p>{currentItem.content.imgAlt}</p>
-          </div>
-        )} */}
-      </StepCont>
+      <StepCont>{currentItem.content}</StepCont>
     </section>
   );
 };

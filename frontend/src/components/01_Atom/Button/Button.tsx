@@ -26,6 +26,8 @@ const buttonStyle = css`
     }
     &-outline {
       /** 중요도 3순위 */
+      background-color: #fff;
+      border: 1px solid #ccc;
     }
     &-text {
       /** 중요도 4순위 */
@@ -76,7 +78,7 @@ interface IbuttonProps {
 const Button = ({
   type = "solid",
   size = "md",
-  round = "5",
+  round = "10",
   flex = false,
   children = "버튼",
 }: IbuttonProps) => {

@@ -17,6 +17,7 @@ const inputStyle = css`
 interface IinputProps {
   value?: string;
   placeholder?: string;
+  width?: string;
   disable?: boolean;
 }
 
@@ -25,6 +26,7 @@ interface IinputProps {
 const Input = ({
   value = "test",
   placeholder = "플레이스 홀더",
+  width = "auto",
   disable,
 }: IinputProps) => {
   return (
@@ -33,6 +35,7 @@ const Input = ({
       type="text"
       defaultValue={value}
       placeholder={placeholder}
+      style={{ width: width }}
       disabled={disable}
     />
   );
