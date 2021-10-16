@@ -4,6 +4,7 @@ import StepCont from "src/components/02_Molecules/StepCont";
 import React, { useState } from "react";
 import Image from "next/image";
 import ImgHam from "src/assets/img/sample_burger.jpg";
+import ImgMap from "src/assets/img/map_sample.jpg";
 import Input from "src/components/01_Atom/Input";
 import Button from "src/components/01_Atom/Button";
 import ButtonWrap from "src/components/02_Molecules/ButtonWrap";
@@ -24,14 +25,6 @@ const content = [
               width="100%"
             />
           </p>
-          <ButtonWrap>
-            <Button type="outline" size="lg">
-              이전
-            </Button>
-            <Button type="solid" size="lg">
-              다음
-            </Button>
-          </ButtonWrap>
         </div>
       </>
     ),
@@ -41,9 +34,11 @@ const content = [
     tab: "위치 등록",
     content: (
       <>
-        <h3>스토어 위치를 맵에서 선택해주세요.</h3>
+        <h3>스토어 위치를 맵에서 선택하고 주소를 적어주세요.</h3>
         <div>
-          <Image src={ImgHam} width="890" height="670" alt="대표사진" />
+          <div>
+            <Image src={ImgMap} width="890" height="670" alt="맵사진" />
+          </div>
           <p>
             <Input
               value="뉴욕시 도봉구 강남대로566"
@@ -51,47 +46,43 @@ const content = [
               width="100%"
             />
           </p>
-          <ButtonWrap>
-            <Button type="outline" size="lg">
-              이전
-            </Button>
-            <Button type="solid" size="lg">
-              다음
-            </Button>
-          </ButtonWrap>
         </div>
       </>
     ),
-    // {
-    //   h3: "스토어 위치를 맵에서 선택해주세요.",
-    //   img: ImgHam,
-    //   imgAlt: "뉴욕시 도봉구 강남대로566",
-    // },
   },
-  // {
-  //   id: 3,
-  //   tab: "메뉴 등록",
-  //   content: {
-  //     h3: "스토어 메뉴, 가격을 입력해주세요.",
-  //   },
-  // },
-  // {
-  //   id: 4,
-  //   tab: "상세정보",
-  //   content: {
-  //     h3: "스토어에 대한 상세정보를 입력해주세요.",
-  //   },
-  // },
-  // {
-  //   id: 5,
-  //   tab: "스토어 생성 완료",
-  //   content: {
-  //     h3: "스토어 생성이 완료되었습니다.",
-  //     img: ImgHam,
-  //     imgAlt: "뉴욕 정통 수제버거",
-  //   },
-  // },
+  {
+    id: 3,
+    tab: "메뉴 등록",
+    content: (
+      <>
+        <h3>스토어 메뉴, 가격을 입력해주세요.</h3>
+      </>
+    ),
+  },
+  {
+    id: 4,
+    tab: "상세정보",
+    content: (
+      <>
+        <h3>스토어에 대한 상세정보를 입력해주세요.</h3>
+      </>
+    ),
+  },
+  {
+    id: 5,
+    tab: "스토어 생성 완료",
+    content: (
+      <>
+        <h3>스토어 생성이 완료되었습니다.</h3>
+        <div>
+          <Image src={ImgHam} width="890" height="670" alt="맵사진" />
+          <p>뉴욕 정통 수제버거</p>
+        </div>
+      </>
+    ),
+  },
 ];
+//console.log(content.length);
 
 const useTabs = (
   initialTab: number,
@@ -110,6 +101,7 @@ const useTabs = (
 
 const Step = ({}) => {
   const { currentItem, changeItem } = useTabs(0, content);
+  // console.log(currentItem.id);
   return (
     <section>
       <StepUl>
@@ -131,6 +123,24 @@ const Step = ({}) => {
         <StepLi step={5} label="스토어 생성 완료" /> */}
       </StepUl>
       <StepCont>{currentItem.content}</StepCont>
+      <ButtonWrap>
+        {currentItem.id - 1 !== 0 && (
+          <Button
+            type="outline"
+            size="lg"
+            onClick={() => changeItem(currentItem.id - 2)}
+          >
+            이전
+          </Button>
+        )}
+        {currentItem.id === content.length ? (
+          <Button>스토어 생성완료</Button>
+        ) : (
+          <Button size="lg" onClick={() => changeItem(currentItem.id)}>
+            다음
+          </Button>
+        )}
+      </ButtonWrap>
     </section>
   );
 };

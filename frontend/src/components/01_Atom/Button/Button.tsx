@@ -73,6 +73,7 @@ interface IbuttonProps {
   round?: "0" | "5" | "10";
   flex?: boolean;
   children?: React.ReactNode;
+  onClick?: () => void;
 }
 
 const Button = ({
@@ -81,6 +82,7 @@ const Button = ({
   round = "10",
   flex = false,
   children = "버튼",
+  onClick,
 }: IbuttonProps) => {
   return (
     <button
@@ -92,6 +94,7 @@ const Button = ({
         `round-${round}`,
         flex && "flex",
       ].join(" ")}
+      onClick={onClick}
     >
       {children}
     </button>
