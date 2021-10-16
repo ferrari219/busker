@@ -8,6 +8,31 @@ import ImgMap from "src/assets/img/map_sample.jpg";
 import Input from "src/components/01_Atom/Input";
 import Button from "src/components/01_Atom/Button";
 import ButtonWrap from "src/components/02_Molecules/ButtonWrap";
+import TextArea from "src/components/01_Atom/TextArea";
+// /** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+import IconButton from "src/components/02_Molecules/IconButton";
+import A from "src/components/01_Atom/A";
+
+const wrapStyle = css``;
+const mapStyle = css`
+  position: relative;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  // 포인터
+  button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+  svg {
+    transform: rotate(-45deg);
+  }
+`;
 
 const content = [
   {
@@ -35,8 +60,9 @@ const content = [
     content: (
       <>
         <h3>스토어 위치를 맵에서 선택하고 주소를 적어주세요.</h3>
-        <div>
-          <div>
+        <div css={wrapStyle}>
+          <div css={mapStyle}>
+            <IconButton icon="IcoPointer" bgColor="pointer" shadow={true} />
             <Image src={ImgMap} width="890" height="670" alt="맵사진" />
           </div>
           <p>
@@ -65,6 +91,7 @@ const content = [
     content: (
       <>
         <h3>스토어에 대한 상세정보를 입력해주세요.</h3>
+        <TextArea height="20rem" />
       </>
     ),
   },
@@ -124,6 +151,9 @@ const Step = ({}) => {
       </StepUl>
       <StepCont>{currentItem.content}</StepCont>
       <ButtonWrap>
+        <A type="light" href="/">
+          생성취소
+        </A>
         {currentItem.id - 1 !== 0 && (
           <Button
             type="outline"
@@ -134,7 +164,9 @@ const Step = ({}) => {
           </Button>
         )}
         {currentItem.id === content.length ? (
-          <Button>스토어 생성완료</Button>
+          <A type="light" href="/">
+            스토어 생성완료
+          </A>
         ) : (
           <Button size="lg" onClick={() => changeItem(currentItem.id)}>
             다음

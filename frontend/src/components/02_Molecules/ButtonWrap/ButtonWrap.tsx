@@ -6,7 +6,9 @@ const buttonWrapStyle = css`
   display: flex;
   justify-content: center;
   padding: 2rem 0;
-  button + button {
+  button + button,
+  button + a,
+  a + button {
     margin-left: 0.5rem;
   }
 `;

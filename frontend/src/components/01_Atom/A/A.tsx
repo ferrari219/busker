@@ -1,10 +1,12 @@
 import React from "react";
+import Link from "next/link";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import theme from "src/styles/theme";
 
-const buttonStyle = css`
+const aStyle = css`
   font-weight: 600;
+  font-size: 1.6rem;
   &.type {
     &-solid {
       /** 중요도 1순위 */
@@ -67,38 +69,38 @@ const buttonStyle = css`
   }
 `;
 
-interface IbuttonProps {
+interface IaProps {
   type?: "solid" | "ghost" | "light" | "outline" | "text" | "danger";
   size?: "sm" | "md" | "lg";
   round?: "0" | "5" | "10";
   flex?: boolean;
   children?: React.ReactNode;
-  onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+  href?: string;
 }
 
-const Button = ({
+const A = ({
   type = "solid",
   size = "md",
   round = "10",
   flex = false,
   children = "버튼",
-  onClick,
-}: IbuttonProps) => {
+  href = "https://",
+}: IaProps) => {
   return (
-    <button
-      type="button"
-      css={buttonStyle}
-      className={[
-        `type-${type}`,
-        `size-${size}`,
-        `round-${round}`,
-        flex && "flex",
-      ].join(" ")}
-      onClick={onClick}
-    >
-      {children}
-    </button>
+    <Link href={href}>
+      <a
+        css={aStyle}
+        className={[
+          `type-${type}`,
+          `size-${size}`,
+          `round-${round}`,
+          flex && "flex",
+        ].join(" ")}
+      >
+        {children}
+      </a>
+    </Link>
   );
 };
 
-export default Button;
+export default A;
