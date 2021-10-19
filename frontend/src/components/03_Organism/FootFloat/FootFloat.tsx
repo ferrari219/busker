@@ -1,5 +1,6 @@
-import IconButton from "@components/02_Molecules/IconButton";
-import Search from "@components/02_Molecules/Search";
+import IconButton from "src/components/02_Molecules/IconButton";
+import IconA from "src/components/02_Molecules/IconA";
+import Search from "src/components/02_Molecules/Search";
 // import React from "react";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
@@ -24,13 +25,13 @@ const FootFloat = () => {
   return (
     <div css={footFloatStyle}>
       <div className="btn">
-        <IconButton icon="IcoAdd" bgColor="add" round="5" />
+        <IconA icon="IcoAdd" bgColor="add" round="5" />
       </div>
       <div className="sch">
         <Search />
       </div>
       <div className="btn">
-        <IconButton icon="IcoBell" bgColor="notice" round="5" />
+        <IconA icon="IcoBell" bgColor="notice" round="5" />
       </div>
     </div>
   );
