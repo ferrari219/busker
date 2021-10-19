@@ -62,8 +62,8 @@ const Menu = ({ onClick }: ImenuProps) => {
         </div>
         <MenuUl>
           <MenuLi icon="IcoSearch" label="검색" />
-          <MenuLi icon="IcoAdd" label="스토어 생성" />
-          <MenuLi icon="IcoBell" label="이벤트" />
+          <MenuLi icon="IcoAdd" label="스토어 생성" href="/add" />
+          <MenuLi icon="IcoBell" label="이벤트" href="/event" />
         </MenuUl>
         <div css={closeStyle}>
           <IconButton icon="IcoClose" bgColor="transp" onClick={onClick} />

@@ -26,7 +26,7 @@ interface IinputProps {
 const Input = ({
   value = "test",
   placeholder = "플레이스 홀더",
-  width = "auto",
+  width,
   disable,
 }: IinputProps) => {
   return (

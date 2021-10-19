@@ -23,17 +23,17 @@ const liStyle = css`
 interface ImenuliProps {
   icon?: string;
   label?: string;
-  link?: string;
+  href?: string;
 }
 
 const MenuLi = ({
   icon = "IcoSearch",
   label = "스토어 생성",
-  link = "https://",
+  href = "https://",
 }: ImenuliProps & IconProps) => {
   return (
     <li css={liStyle}>
-      <Link href={link}>
+      <Link href={href}>
         <a>
           <Icon icon={icon} />
           <span>{label}</span>

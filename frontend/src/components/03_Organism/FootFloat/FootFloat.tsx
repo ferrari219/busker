@@ -25,13 +25,13 @@ const FootFloat = () => {
   return (
     <div css={footFloatStyle}>
       <div className="btn">
-        <IconA icon="IcoAdd" bgColor="add" round="5" />
+        <IconA icon="IcoAdd" bgColor="add" round="5" href="/add" />
       </div>
       <div className="sch">
         <Search />
       </div>
       <div className="btn">
-        <IconA icon="IcoBell" bgColor="notice" round="5" />
+        <IconA icon="IcoBell" bgColor="notice" round="5" href="/event" />
       </div>
     </div>
   );
