@@ -4,10 +4,12 @@ import Image from "next/image";
 import MapSample from "@assets/img/map_sample.jpg";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import Nav from "@components/04_Templates/Nav";
+
 import FootFloat from "@components/03_Organism/FootFloat";
 import IconButton from "@components/02_Molecules/IconButton";
 import { SrOnly } from "@styles/globalStyle";
+import Header from "@components/03_Organism/Header";
+import Nav from "@components/04_Templates/Nav";
 
 const h1Style = css`
   ${SrOnly}
@@ -57,7 +59,13 @@ const Home: NextPage = () => {
       <main>
         <h1 css={h1Style}>메인 페이지</h1>
         <section css={mainStyle}>
-          <Nav />
+          <Header
+            left={
+              <>
+                <Nav />
+              </>
+            }
+          />
           <div css={mapStyle}>
             <IconButton icon="IcoPointer" bgColor="pointer" shadow={true} />
             <Image src={MapSample} alt="지도 샘플" />

@@ -7,6 +7,9 @@ import Step from "@components/04_Templates/Step";
 import StepCont from "@components/02_Molecules/StepCont";
 import Image from "next/image";
 import ImgHam from "src/assets/img/sample_burger.jpg";
+import Header from "@components/03_Organism/Header";
+import IconButton from "@components/02_Molecules/IconButton";
+import Nav from "@components/04_Templates/Nav";
 
 const mainStyle = css`
   h1 {
@@ -20,6 +23,20 @@ const AddPresenter = () => {
       <Heads title="스토어 등록" />
       <main css={mainStyle}>
         <h1>스토어 등록</h1>
+        <Header
+          left={
+            <>
+              <IconButton
+                icon="IcoBack"
+                bgColor="transp"
+                onClick={() => history.back()}
+              />
+              <Nav bgColor="transp" shadow={false} />
+            </>
+          }
+          mid="이벤트"
+          right={<IconButton icon="IcoUser" bgColor="transp" />}
+        />
         <Step />
       </main>
     </section>

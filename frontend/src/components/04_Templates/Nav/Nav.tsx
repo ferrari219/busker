@@ -5,9 +5,9 @@ import IconButton from "src/components/02_Molecules/IconButton/IconButton";
 import { css } from "@emotion/react";
 
 const wrapStyle = css`
-  position: absolute;
-  left: 2rem;
-  top: 2rem;
+  position: relative;
+  left: 0;
+  top: 0;
   z-index: 3;
 `;
 const navStyle = css`
@@ -36,12 +36,21 @@ const handleCloseBtn = (e: React.SyntheticEvent<EventTarget>) => {
   navs.classList.remove("is-active");
 };
 
-interface InavProps {}
+interface InavProps {
+  bgColor?: "basic" | "pointer" | "add" | "notice" | "transp";
+  shadow?: boolean;
+}
 
-const Nav = ({}: InavProps) => {
+const Nav = ({ bgColor = "basic", shadow = true }: InavProps) => {
   return (
     <div css={wrapStyle}>
-      <IconButton icon="IcoMenu" onClick={handleMenuBtn} shadow size="4rem" />
+      <IconButton
+        icon="IcoMenu"
+        bgColor={bgColor}
+        onClick={handleMenuBtn}
+        shadow
+        size="4rem"
+      />
       <nav css={navStyle}>
         <Menu onClick={handleCloseBtn} />
       </nav>

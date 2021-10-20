@@ -3,21 +3,33 @@ import Heads from "@components/99_Etc/Heads";
 import React from "react";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { SrOnly } from "@styles/globalStyle";
+import IconButton from "src/components/02_Molecules/IconButton";
+import Nav from "@components/04_Templates/Nav";
 
-const mainStyle = css`
-  h1 {
-    ${SrOnly}
-  }
-`;
+const mainStyle = css``;
 
 const EventPresenter = () => {
   return (
     <div>
       <Heads title="이벤트" />
-      <h1>이벤트</h1>
-      <main css={mainStyle}>
-        <Header />
+      {/* <h1>이벤트</h1> */}
+      <main>
+        <section css={mainStyle}>
+          <Header
+            left={
+              <>
+                <IconButton
+                  icon="IcoBack"
+                  bgColor="transp"
+                  onClick={() => history.back()}
+                />
+                <Nav bgColor="transp" shadow={false} />
+              </>
+            }
+            mid="이벤트"
+            right={<IconButton icon="IcoUser" bgColor="transp" />}
+          />
+        </section>
       </main>
     </div>
   );
