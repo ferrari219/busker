@@ -11,18 +11,13 @@ import Header from "@components/03_Organism/Header";
 import IconButton from "@components/02_Molecules/IconButton";
 import Nav from "@components/04_Templates/Nav";
 
-const mainStyle = css`
-  h1 {
-    ${SrOnly}
-  }
-`;
+const mainStyle = css``;
 
 const AddPresenter = () => {
   return (
     <section>
       <Heads title="스토어 등록" />
       <main css={mainStyle}>
-        <h1>스토어 등록</h1>
         <Header
           left={
             <>
@@ -34,7 +29,7 @@ const AddPresenter = () => {
               <Nav bgColor="transp" shadow={false} />
             </>
           }
-          mid="이벤트"
+          mid="스토어등록"
           right={<IconButton icon="IcoUser" bgColor="transp" />}
         />
         <Step />

@@ -41,14 +41,14 @@ interface InavProps {
   shadow?: boolean;
 }
 
-const Nav = ({ bgColor = "basic", shadow = true }: InavProps) => {
+const Nav = ({ bgColor = "basic", shadow = false }: InavProps) => {
   return (
     <div css={wrapStyle}>
       <IconButton
         icon="IcoMenu"
         bgColor={bgColor}
         onClick={handleMenuBtn}
-        shadow
+        shadow={shadow}
         size="4rem"
       />
       <nav css={navStyle}>

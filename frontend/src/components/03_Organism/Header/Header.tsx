@@ -13,6 +13,7 @@ const headerStyle = css`
     flex: 0 0 10rem;
     display: flex;
     flex-flow: row wrap;
+    justify-content: flex-start;
   }
   .divMid {
     flex: 1;
@@ -22,6 +23,9 @@ const headerStyle = css`
   }
   .divRight {
     flex: 0 0 10rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
   }
 `;
 
