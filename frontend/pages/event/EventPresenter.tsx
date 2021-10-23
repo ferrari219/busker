@@ -5,6 +5,8 @@ import React from "react";
 import { css } from "@emotion/react";
 import IconButton from "src/components/02_Molecules/IconButton";
 import Nav from "@components/04_Templates/Nav";
+import EventUl from "@components/02_Molecules/EventUl";
+import EventLi from "@components/01_Atom/EventLi";
 
 const mainStyle = css``;
 
@@ -29,6 +31,11 @@ const EventPresenter = () => {
             mid="이벤트"
             right={<IconButton icon="IcoUser" bgColor="transp" />}
           />
+          <EventUl>
+            <EventLi />
+            <EventLi />
+            <EventLi />
+          </EventUl>
         </section>
       </main>
     </div>

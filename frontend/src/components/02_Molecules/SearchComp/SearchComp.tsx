@@ -34,9 +34,9 @@ const searchStyle = css`
   }
 `;
 
-interface IsearchProps {}
+interface IsearchcompProps {}
 
-const Search = ({}: IsearchProps) => {
+const SearchComp = ({}: IsearchcompProps) => {
   return (
     <form>
       <div css={searchStyle}>
@@ -49,4 +49,4 @@ const Search = ({}: IsearchProps) => {
   );
 };
 
-export default Search;
+export default SearchComp;
