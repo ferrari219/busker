@@ -18,6 +18,9 @@ const searchStyle = css`
     width: 100%;
     height: 3.5rem;
     border: none;
+    &.active {
+      background-color: 1px solid red;
+    }
   }
   button {
     position: absolute;
@@ -34,15 +37,19 @@ const searchStyle = css`
   }
 `;
 
-interface IsearchcompProps {
-  iptClick: () => void;
-}
+interface IsearchcompProps {}
 
-const SearchComp = ({ iptClick }: IsearchcompProps) => {
+const handleIpt = () => {
+  const tgt = document.querySelector("#dev_search input") as HTMLInputElement;
+  console.log(tgt);
+  tgt.classList.add("is-active");
+};
+
+const SearchComp = ({}: IsearchcompProps) => {
   return (
     <form>
-      <div css={searchStyle}>
-        <Input placeholder="검색" onclick={iptClick} />
+      <div id="dev_search" css={searchStyle}>
+        <Input placeholder="검색" onClick={handleIpt} />
         <button type="button">
           <Icon icon="IcoSearch" />
         </button>

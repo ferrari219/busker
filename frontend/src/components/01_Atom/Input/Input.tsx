@@ -19,6 +19,7 @@ interface IinputProps {
   placeholder?: string;
   width?: string;
   disable?: boolean;
+  onClick?: () => void;
 }
 
 // https://brunch.co.kr/@chulhochoiucj0/20
@@ -28,6 +29,7 @@ const Input = ({
   placeholder = "플레이스 홀더",
   width,
   disable,
+  onClick,
 }: IinputProps) => {
   return (
     <input
@@ -37,6 +39,7 @@ const Input = ({
       placeholder={placeholder}
       style={{ width: width }}
       disabled={disable}
+      onClick={onClick}
     />
   );
 };
