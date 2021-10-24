@@ -1,6 +1,6 @@
 import IconButton from "src/components/02_Molecules/IconButton";
 import IconA from "src/components/02_Molecules/IconA";
-import SearchComp from "@components/02_Molecules/SearchComp";
+import SearchComp from "src/components/02_Molecules/SearchComp";
 // import React from "react";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
@@ -21,7 +21,7 @@ const footFloatStyle = css`
   }
 `;
 
-const FootFloat = () => {
+const FootFloat = ({}) => {
   return (
     <div css={footFloatStyle}>
       <div className="btn">

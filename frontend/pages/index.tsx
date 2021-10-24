@@ -5,7 +5,7 @@ import MapSample from "@assets/img/map_sample.jpg";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import FootFloat from "@components/03_Organism/FootFloat";
+import FootFloat from "@components/04_Templates/FootFloat";
 import IconButton from "@components/02_Molecules/IconButton";
 import { SrOnly } from "@styles/globalStyle";
 import Header from "@components/03_Organism/Header";

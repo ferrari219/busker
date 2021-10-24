@@ -34,13 +34,15 @@ const searchStyle = css`
   }
 `;
 
-interface IsearchcompProps {}
+interface IsearchcompProps {
+  iptClick: () => void;
+}
 
-const SearchComp = ({}: IsearchcompProps) => {
+const SearchComp = ({ iptClick }: IsearchcompProps) => {
   return (
     <form>
       <div css={searchStyle}>
-        <Input placeholder="검색" />
+        <Input placeholder="검색" onclick={iptClick} />
         <button type="button">
           <Icon icon="IcoSearch" />
         </button>
