@@ -37,19 +37,15 @@ const searchStyle = css`
   }
 `;
 
-interface IsearchcompProps {}
+interface IsearchcompProps {
+  iptClick?: () => void;
+}
 
-const handleIpt = () => {
-  const tgt = document.querySelector("#dev_search input") as HTMLInputElement;
-  console.log(tgt);
-  tgt.classList.add("is-active");
-};
-
-const SearchComp = ({}: IsearchcompProps) => {
+const SearchComp = ({ iptClick }: IsearchcompProps) => {
   return (
     <form>
-      <div id="dev_search" css={searchStyle}>
-        <Input placeholder="검색" onClick={handleIpt} />
+      <div css={searchStyle}>
+        <Input placeholder="검색" onClick={iptClick} />
         <button type="button">
           <Icon icon="IcoSearch" />
         </button>

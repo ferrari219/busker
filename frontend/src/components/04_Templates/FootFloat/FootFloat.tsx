@@ -21,14 +21,18 @@ const footFloatStyle = css`
   }
 `;
 
-const FootFloat = ({}) => {
+interface IfootfloatProps {
+  iptClick?: () => void;
+}
+
+const FootFloat = ({ iptClick }: IfootfloatProps) => {
   return (
-    <div css={footFloatStyle}>
+    <div id="dev_footFloat" css={footFloatStyle}>
       <div className="btn">
         <IconA icon="IcoAdd" bgColor="add" round="5" href="/add" />
       </div>
       <div className="sch">
-        <SearchComp />
+        <SearchComp iptClick={iptClick} />
       </div>
       <div className="btn">
         <IconA icon="IcoBell" bgColor="notice" round="5" href="/event" />

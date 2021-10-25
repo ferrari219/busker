@@ -47,7 +47,17 @@ const footfloatStyle = css`
   z-index: 2;
   width: 100%;
   padding: 0 1rem;
+  transition: bottom ease-in 0.2s;
+  &.is-active {
+    bottom: 80%;
+  }
 `;
+
+const handleIptClick = () => {
+  const tgt = document.querySelector("#dev_footFloat") as HTMLElement;
+  // console.log(tgt);
+  tgt.classList.add("is-active");
+};
 
 const Home: NextPage = () => {
   return (
@@ -70,8 +80,8 @@ const Home: NextPage = () => {
             <IconButton icon="IcoPointer" bgColor="pointer" shadow={true} />
             <Image src={MapSample} alt="지도 샘플" />
           </div>
-          <section css={footfloatStyle}>
-            <FootFloat />
+          <section id="dev_footFloat" css={footfloatStyle}>
+            <FootFloat iptClick={handleIptClick} />
           </section>
         </section>
       </main>
