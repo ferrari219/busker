@@ -13,16 +13,25 @@ const searchliStyle = css`
     align-items: center;
   }
   dl {
+    flex: 1;
     dt {
       margin: 0;
-      padding: 0;
+      padding: 0 2rem 0 0;
+      font-size: ${theme.size.lg};
     }
     dd {
       margin: 0;
       padding: 0;
+      font-size: ${theme.size.base};
       &.price {
         color: ${theme.color.main};
       }
+    }
+  }
+  p {
+    flex: 0 0 10rem;
+    img {
+      width: 100%;
     }
   }
 `;

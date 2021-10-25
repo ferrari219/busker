@@ -14,6 +14,12 @@ const global = (
           box-sizing: inherit;
         }
       }
+      ul,
+      dl {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
       body {
         max-width: 89rem;
         margin: 0 auto;
