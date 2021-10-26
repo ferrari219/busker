@@ -4,8 +4,7 @@ import Image from "next/image";
 import MapSample from "@assets/img/map_sample.jpg";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-
-import FootFloat from "@components/04_Templates/FootFloat";
+import Search from "@components/04_Templates/Search";
 import IconButton from "@components/02_Molecules/IconButton";
 import { SrOnly } from "@styles/globalStyle";
 import Header from "@components/03_Organism/Header";
@@ -29,18 +28,22 @@ const mapStyle = css`
     object-fit: cover;
   }
   // 포인터
-  button {
+  .pointer {
     position: fixed;
     left: 50%;
     top: 50%;
     z-index: 1;
     transform: translate(-50%, -50%);
+    transition: top ease-in-out 0.2s;
+    &.is-active {
+      top: 35%;
+    }
   }
   svg {
     transform: rotate(-45deg);
   }
 `;
-const footfloatStyle = css`
+const searchStyle = css`
   position: absolute;
   left: 0;
   bottom: 2rem;
@@ -49,14 +52,16 @@ const footfloatStyle = css`
   padding: 0 1rem;
   transition: bottom ease-in 0.2s;
   &.is-active {
-    bottom: 80%;
+    /* bottom: 80%; */
   }
 `;
 
 const handleIptClick = () => {
-  const tgt = document.querySelector("#dev_footFloat") as HTMLElement;
+  const tgt = document.querySelector("#dev_search") as HTMLElement;
+  const tgt2 = document.querySelector("#dev_pointer") as HTMLElement;
   // console.log(tgt);
   tgt.classList.add("is-active");
+  tgt2.classList.add("is-active");
 };
 
 const Home: NextPage = () => {
@@ -77,11 +82,13 @@ const Home: NextPage = () => {
             }
           />
           <div css={mapStyle}>
-            <IconButton icon="IcoPointer" bgColor="pointer" shadow={true} />
+            <div id="dev_pointer" className="pointer">
+              <IconButton icon="IcoPointer" bgColor="pointer" shadow={true} />
+            </div>
             <Image src={MapSample} alt="지도 샘플" />
           </div>
-          <section id="dev_footFloat" css={footfloatStyle}>
-            <FootFloat iptClick={handleIptClick} />
+          <section id="dev_search" css={searchStyle}>
+            <Search iptClick={handleIptClick} />
           </section>
         </section>
       </main>

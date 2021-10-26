@@ -3,7 +3,7 @@ import React from "react";
 import { css } from "@emotion/react";
 
 const ulStyle = css`
-  list-stlye: none;
+  padding-top: 1rem;
 `;
 
 interface IsearchulProps {

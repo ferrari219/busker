@@ -1,3 +1,4 @@
+import SearchLi from "src/components/01_Atom/SearchLi";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import SearchUl from "./SearchUl";
 
@@ -11,4 +12,12 @@ const Template: ComponentStory<typeof SearchUl> = (args) => (
 );
 
 export const Overview = Template.bind({});
-Overview.args = {};
+Overview.args = {
+  children: (
+    <>
+      <SearchLi />
+      <SearchLi />
+      <SearchLi />
+    </>
+  ),
+};

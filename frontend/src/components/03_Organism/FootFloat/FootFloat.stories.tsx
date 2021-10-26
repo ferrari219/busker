@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import FootFloat from "./FootFloat";
 
 export default {
-  title: "04_Templates/FootFloat",
+  title: "03_Organism/FootFloat",
   component: FootFloat,
 } as ComponentMeta<typeof FootFloat>;
 

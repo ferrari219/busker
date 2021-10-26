@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import ButtonWrap from "./ButtonWrap";
+import Button from "src/components/01_Atom/Button";
 
 export default {
   title: "02_Molecules/ButtonWrap",
@@ -11,4 +12,10 @@ const Template: ComponentStory<typeof ButtonWrap> = (args) => (
 );
 
 export const Overview = Template.bind({});
-Overview.args = {};
+Overview.args = {
+  children: (
+    <>
+      <Button />
+    </>
+  ),
+};

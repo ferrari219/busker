@@ -33,6 +33,7 @@ const imgStyle = css`
   /* background-color: red; */
   img {
     width: 100%;
+    border-radius: 1rem;
   }
 `;
 

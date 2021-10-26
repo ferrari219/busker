@@ -9,13 +9,15 @@ const footFloatStyle = css`
   display: flex;
   flex-flow: row wrap;
   max-width: 89rem;
+  padding: 1rem 0;
   .btn {
-    flex-basis: 5rem;
+    flex-basis: 4rem;
     display: flex;
     justify-content: center;
   }
   .sch {
     flex: 1;
+    padding: 0 1rem;
     /* display: flex;
     justify-content: center; */
   }

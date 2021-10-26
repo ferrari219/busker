@@ -6,6 +6,7 @@ import { css } from "@emotion/react";
 import theme from "src/styles/theme";
 
 const searchliStyle = css`
+  border-top: 1px solid #f2f2f2;
   div {
     display: flex;
     flex-flow: row wrap;
@@ -16,8 +17,9 @@ const searchliStyle = css`
     flex: 1;
     dt {
       margin: 0;
-      padding: 0 2rem 0 0;
+      padding: 0 0 1rem 0;
       font-size: ${theme.size.lg};
+      font-weight: 600;
     }
     dd {
       margin: 0;
@@ -28,11 +30,13 @@ const searchliStyle = css`
       }
     }
   }
-  p {
-    flex: 0 0 10rem;
-    img {
-      width: 100%;
-    }
+`;
+const imgStyle = css`
+  flex: 0 0 10rem;
+  margin: 1rem 0;
+  img {
+    width: 100%;
+    border-radius: 1rem;
   }
 `;
 
@@ -45,9 +49,9 @@ const SearchLi = ({}) => {
           <dd>10m | 정통한정식</dd>
           <dd className="price">4.52 ★★★☆☆ (56)</dd>
         </dl>
-        <p>
+        <div css={imgStyle}>
           <Image src={ImgHam} width="200" height="200" alt="sample" />
-        </p>
+        </div>
       </div>
     </li>
   );

@@ -12,7 +12,7 @@ export const Overview = Template.bind({});
 Overview.args = {
   type: "solid",
   size: "md",
-  round: "5",
+  round: "10",
   flex: false,
   children: "버튼",
 };
