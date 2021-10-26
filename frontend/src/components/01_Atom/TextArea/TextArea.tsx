@@ -14,10 +14,20 @@ const textareaStyle = css`
 
 interface ItextareaProps {
   height?: string;
+  placeholder?: string;
 }
 
-const TextArea = ({ height = "10rem" }: ItextareaProps) => {
-  return <textarea css={textareaStyle} style={{ height: height }} />;
+const TextArea = ({
+  height = "10rem",
+  placeholder = "여기에 적어주세요.",
+}: ItextareaProps) => {
+  return (
+    <textarea
+      css={textareaStyle}
+      style={{ height: height }}
+      placeholder={placeholder}
+    />
+  );
 };
 
 export default TextArea;

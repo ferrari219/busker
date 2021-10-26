@@ -12,18 +12,9 @@ const liStyle = css`
     align-items: center;
     justify-content: space-between;
   }
-  p {
-    flex: 0 0 30%;
-    margin: 0;
-    padding: 0;
-    /* background-color: red; */
-    img {
-      width: 100%;
-    }
-  }
   dl {
     flex: 1;
-    padding: 0 2rem;
+    padding: 2rem;
     dt {
       margin: 0;
       padding: 0;
@@ -35,6 +26,15 @@ const liStyle = css`
     }
   }
 `;
+const imgStyle = css`
+  flex: 0 0 30%;
+  margin: 0;
+  padding: 0;
+  /* background-color: red; */
+  img {
+    width: 100%;
+  }
+`;
 
 const EventLi = ({}) => {
   return (
@@ -42,9 +42,9 @@ const EventLi = ({}) => {
       <Link href="https://">
         <a>
           <div>
-            <p>
-              <Image src={ImgHam} width="500" height="500" alt="" />
-            </p>
+            <div css={imgStyle}>
+              <Image src={ImgHam} width="200" height="200" alt="" />
+            </div>
             <dl>
               <dt>뉴욕 정통 치즈버거</dt>
               <dd>오후 8시까지 전메뉴 3천원 할인</dd>
