@@ -4,11 +4,13 @@ import Image from "next/image";
 import MapSample from "@assets/img/map_sample.jpg";
 // /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import Search from "@components/04_Templates/Search";
+import FootFloat from "@components/03_Organism/FootFloat";
 import IconButton from "@components/02_Molecules/IconButton";
 import { SrOnly } from "@styles/globalStyle";
 import Header from "@components/03_Organism/Header";
 import Nav from "@components/04_Templates/Nav";
+import { useState } from "react";
+import SearchResult from "@components/03_Organism/SearchResult";
 
 const h1Style = css`
   ${SrOnly}
@@ -50,9 +52,16 @@ const searchStyle = css`
   z-index: 2;
   width: 100%;
   padding: 0 1rem;
-  transition: bottom ease-in 0.2s;
+`;
+const schResultStyle = css`
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  transition: opacity ease-in-out 0.2s;
   &.is-active {
-    /* bottom: 80%; */
+    visibility: visible;
+    height: auto;
+    opacity: 1;
   }
 `;
 
@@ -87,8 +96,11 @@ const Home: NextPage = () => {
             </div>
             <Image src={MapSample} alt="지도 샘플" />
           </div>
-          <section id="dev_search" css={searchStyle}>
-            <Search iptClick={handleIptClick} />
+          <section css={searchStyle}>
+            <FootFloat iptClick={handleIptClick} />
+            <div id="dev_search" css={schResultStyle}>
+              <SearchResult />
+            </div>
           </section>
         </section>
       </main>
