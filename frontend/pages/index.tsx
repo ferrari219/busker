@@ -77,6 +77,7 @@ const Home: NextPage = () => {
   return (
     <section>
       {/* https://projects.invisionapp.com/share/JZRMNHUH2BC */}
+      {/* https://61829da196f986003a313056-vzgkewuklh.chromatic.com/?path=/story/01-atom-a--overview */}
       <Head>
         <title>리바트몰</title>
       </Head>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import EventPresenter from "./EventPresenter";
-import axios from "axios";
-import { profileApi } from "pages/api/Api";
+import { profileApi } from "pages/api/api";
 class EventContainer extends Component {
   state = {
     iam: null,

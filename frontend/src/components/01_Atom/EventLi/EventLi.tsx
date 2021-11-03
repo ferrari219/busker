@@ -6,6 +6,7 @@ import Image from "next/image";
 import ImgHam from "src/assets/img/sample_burger.jpg";
 
 const liStyle = css`
+  padding: 1rem 0;
   div {
     display: flex;
     flex-flow: row wrap;
@@ -14,7 +15,7 @@ const liStyle = css`
   }
   dl {
     flex: 1;
-    padding: 2rem;
+    padding: 0 2rem;
     dt {
       margin: 0;
       padding: 0;
