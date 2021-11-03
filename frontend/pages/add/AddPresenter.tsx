@@ -10,42 +10,31 @@ import ImgHam from "src/assets/img/sample_burger.jpg";
 import Header from "@components/03_Organism/Header";
 import IconButton from "@components/02_Molecules/IconButton";
 import Nav from "@components/04_Templates/Nav";
-import Loader from "@components/04_Templates/Loader";
 
 const mainStyle = css``;
 
-interface IaddProps {
-  loading: boolean;
-}
-
-const AddPresenter = ({ loading }) => {
+const AddPresenter = () => {
   return (
-    <>
-      {loading ? (
-        <Loader />
-      ) : (
-        <section>
-          <Heads title="스토어 등록" />
-          <main css={mainStyle}>
-            <Header
-              left={
-                <>
-                  <IconButton
-                    icon="IcoBack"
-                    bgColor="transp"
-                    onClick={() => history.back()}
-                  />
-                  <Nav bgColor="transp" shadow={false} />
-                </>
-              }
-              mid="스토어등록"
-              right={<IconButton icon="IcoUser" bgColor="transp" />}
-            />
-            <Step />
-          </main>
-        </section>
-      )}
-    </>
+    <section>
+      <Heads title="스토어 등록" />
+      <main css={mainStyle}>
+        <Header
+          left={
+            <>
+              <IconButton
+                icon="IcoBack"
+                bgColor="transp"
+                onClick={() => history.back()}
+              />
+              <Nav bgColor="transp" shadow={false} />
+            </>
+          }
+          mid="스토어등록"
+          right={<IconButton icon="IcoUser" bgColor="transp" />}
+        />
+        <Step />
+      </main>
+    </section>
   );
 };
 

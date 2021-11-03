@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import EventPresenter from "./EventPresenter";
-import { profileApi } from "pages/api/api";
+import { profileApi } from "pages/api/Api";
 class EventContainer extends Component {
   state = {
     iam: null,
@@ -23,7 +23,7 @@ class EventContainer extends Component {
   render() {
     const { iam } = this.state;
     console.log(iam);
-    return <EventPresenter />;
+    return <EventPresenter loading={false} />;
   }
 }
 
