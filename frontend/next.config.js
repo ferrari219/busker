@@ -1,6 +1,9 @@
 const Dotenv = require("dotenv-webpack");
 module.exports = {
   reactStrictMode: true,
+  images: {
+    domains: ["ferrari219.github.io"], // https://via.placeholder.com/150/92c952"
+  },
   babel: {
     presets: ["@emotion/babel-preset-css-prop"],
     plugins: ["@emotion"],

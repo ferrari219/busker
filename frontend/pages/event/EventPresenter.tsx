@@ -12,13 +12,13 @@ import Loader from "@components/04_Templates/Loader";
 const mainStyle = css``;
 
 interface IeventProps {
-  event: object | null;
+  event: Array<{ id: number }> | null;
   loading: boolean;
   error: string | null;
 }
 
 const EventPresenter = ({ event, loading, error }: IeventProps) => {
-  console.log(event);
+  // console.log(event);
   return (
     <>
       {loading ? (
@@ -44,7 +44,8 @@ const EventPresenter = ({ event, loading, error }: IeventProps) => {
                 right={<IconButton icon="IcoUser" bgColor="transp" />}
               />
               <EventUl>
-                {event && <EventLi />}
+                {event &&
+                  event.map((item) => <EventLi key={item.id} {...item} />)}
                 {/* <EventLi />
                 <EventLi />
                 <EventLi /> */}

@@ -54,11 +54,11 @@ const EventLi = ({ id, company, promotion, pic, lnk }: IeventliProps) => {
         <a>
           <div>
             <div css={imgStyle}>
-              <Image src={ImgHam} width="200" height="200" alt="" />
+              <Image src={pic} width="200" height="200" alt="" />
             </div>
             <dl>
-              <dt>뉴욕 정통 치즈버거</dt>
-              <dd>오후 8시까지 전메뉴 3천원 할인</dd>
+              <dt>{company}</dt>
+              <dd>{promotion}</dd>
             </dl>
           </div>
         </a>
