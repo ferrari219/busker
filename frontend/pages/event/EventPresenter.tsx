@@ -18,6 +18,7 @@ interface IeventProps {
 }
 
 const EventPresenter = ({ event, loading, error }: IeventProps) => {
+  console.log(event);
   return (
     <>
       {loading ? (
@@ -43,7 +44,7 @@ const EventPresenter = ({ event, loading, error }: IeventProps) => {
                 right={<IconButton icon="IcoUser" bgColor="transp" />}
               />
               <EventUl>
-                {event && <EventLi {...event} />}
+                {event && <EventLi />}
                 {/* <EventLi />
                 <EventLi />
                 <EventLi /> */}
