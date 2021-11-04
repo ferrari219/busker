@@ -42,15 +42,15 @@ interface IeventliProps {
   id?: number;
   company?: string;
   promotion?: string | null;
-  pic?: string | null | undefined;
+  pic: string;
   lnk?: string | null;
 }
 
 const EventLi = ({ id, company, promotion, pic, lnk }: IeventliProps) => {
-  console.log(pic);
+  // console.log(pic);
   return (
     <li css={liStyle}>
-      <Link href="https://">
+      <Link href={lnk}>
         <a>
           <div>
             <div css={imgStyle}>
