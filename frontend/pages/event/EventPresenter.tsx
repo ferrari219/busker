@@ -12,10 +12,12 @@ import Loader from "@components/04_Templates/Loader";
 const mainStyle = css``;
 
 interface IeventProps {
+  event: object | null;
   loading: boolean;
+  error: string | null;
 }
 
-const EventPresenter = ({ loading }: IeventProps) => {
+const EventPresenter = ({ event, loading, error }: IeventProps) => {
   return (
     <>
       {loading ? (
@@ -41,9 +43,10 @@ const EventPresenter = ({ loading }: IeventProps) => {
                 right={<IconButton icon="IcoUser" bgColor="transp" />}
               />
               <EventUl>
+                {event && <EventLi {...event} />}
+                {/* <EventLi />
                 <EventLi />
-                <EventLi />
-                <EventLi />
+                <EventLi /> */}
               </EventUl>
             </section>
           </main>

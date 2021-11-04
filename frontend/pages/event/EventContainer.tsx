@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import EventPresenter from "./EventPresenter";
-import { profileApi } from "pages/api/Api";
+import { eventApi } from "pages/api/Api";
 class EventContainer extends Component {
   state = {
-    iam: null,
+    event: null,
     loading: true,
     error: null,
   };
   async componentDidMount() {
     try {
-      const { data: iam } = await profileApi.iam();
+      const { data: event } = await eventApi.event();
       this.setState({
-        iam,
+        event,
       });
     } catch {
       this.setState({ error: "Cant find information" });
@@ -21,9 +21,9 @@ class EventContainer extends Component {
   }
 
   render() {
-    const { iam } = this.state;
-    console.log(iam);
-    return <EventPresenter loading={false} />;
+    const data = this.state;
+    console.log(data.event);
+    return <EventPresenter {...data} />;
   }
 }
 
