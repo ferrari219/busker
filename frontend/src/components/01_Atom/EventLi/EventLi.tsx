@@ -40,10 +40,10 @@ const imgStyle = css`
 
 interface IeventliProps {
   id?: number;
-  company?: string;
+  company: string;
   promotion?: string | null;
   pic: string;
-  lnk?: string | null;
+  lnk: string;
 }
 
 const EventLi = ({ id, company, promotion, pic, lnk }: IeventliProps) => {
