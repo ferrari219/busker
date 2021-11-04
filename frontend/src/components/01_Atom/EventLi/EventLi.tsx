@@ -3,7 +3,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import Link from "next/link";
 import Image from "next/image";
-import ImgHam from "src/assets/img/sample_burger.jpg";
+// import ImgHam from "src/assets/img/sample_burger.jpg";
 
 const liStyle = css`
   padding: 1rem 0;
@@ -38,14 +38,22 @@ const imgStyle = css`
   }
 `;
 
-const EventLi = ({}) => {
+interface IeventliProps {
+  id?: number;
+  company?: string;
+  promotion?: "오후 8시까지 전메뉴 3천원 할인";
+  pic?: string | null | undefined;
+  lnk?: string | null;
+}
+
+const EventLi = ({ id, company, promotion, pic, lnk }: IeventliProps) => {
   return (
     <li css={liStyle}>
       <Link href="https://">
         <a>
           <div>
             <div css={imgStyle}>
-              <Image src={ImgHam} width="200" height="200" alt="" />
+              <Image src={pic} width="200" height="200" alt="" />
             </div>
             <dl>
               <dt>뉴욕 정통 치즈버거</dt>
