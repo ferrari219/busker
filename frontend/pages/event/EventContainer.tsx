@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import EventPresenter from "./EventPresenter";
-import { eventApi } from "pages/api/Api";
+import { eventApi } from "pages/api/api";
 class EventContainer extends Component {
   state = {
     event: null,

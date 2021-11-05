@@ -12,7 +12,14 @@ import Loader from "@components/04_Templates/Loader";
 const mainStyle = css``;
 
 interface IeventProps {
-  event: Array<{ id: number }> | null;
+  event: Array<{
+    id: number;
+    key: number;
+    company: string;
+    promotion?: string | null;
+    pic: string;
+    lnk: string;
+  }> | null;
   loading: boolean;
   error: string | null;
 }
@@ -45,7 +52,16 @@ const EventPresenter = ({ event, loading, error }: IeventProps) => {
               />
               <EventUl>
                 {event &&
-                  event.map((item) => <EventLi key={item.id} {...item} />)}
+                  event.map(({ id, company, promotion, pic, lnk }) => (
+                    <EventLi
+                      key={id}
+                      id={id}
+                      company={company}
+                      promotion={promotion}
+                      pic={pic}
+                      lnk={lnk}
+                    />
+                  ))}
                 {/* <EventLi />
                 <EventLi />
                 <EventLi /> */}
