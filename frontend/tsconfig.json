@@ -41,6 +41,7 @@
     "src",
     "pages",
     "styles",
+    "next.config.js",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
